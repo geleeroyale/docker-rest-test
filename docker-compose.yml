@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  api:
+    image: "ghcr.io/geleeroyale/docker-rest-test:latest"
+    ports:
+      - "4444:4444"
+    # ---- Development override ----
+    # If you want to build locally instead of pulling from GHCR
+    # uncomment the following lines:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    networks:
+      - default_external
+
+networks:
+  default_external:
+    external: true
+    name: "${DOCKER_NETWORK}"
