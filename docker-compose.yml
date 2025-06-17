@@ -1,8 +1,9 @@
 services:
-  api:
+  docker-rest-test:
     image: "ghcr.io/geleeroyale/docker-rest-test:latest"
     ports:
       - "4444:4444"
+    container_name: docker-rest-test
     # ---- Development override ----
     # If you want to build locally instead of pulling from GHCR
     # uncomment the following lines:
